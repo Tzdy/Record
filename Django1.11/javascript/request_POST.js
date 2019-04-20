@@ -21,3 +21,5 @@ function loadDoc() {
 // views.py中要用 a = request.POST  会得到一个字典
 // 要调用其中的数据
 // a['a']  一定要用中括号不要用点。
+//If server return json,the json's format should be {"key":"value"}
+//for example {"username":"anqi"}     {"age":19}
