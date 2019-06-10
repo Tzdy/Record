@@ -1,16 +1,14 @@
-function $(str,...arr){
-        var node;
+function $(str,...arr){   // node , 选第几个
+        var node = null;
         var s = str;
-        var length = arr.length==0?0:arr[0];
         if(str[0] == '.'){
                 s = s.replace('.','');
-                node = document.getElementsByClassName(s)[length];
+                node = arr.length == 0? document.getElementsByClassName(s):document.getElementsByClassName(s)[arr[0]];
         }else if(str[0] == '#'){
                 s = s.replace('#','');
                 node = document.getElementById(s);
         } else if(str.search(/^\w/) == 0){
-                console.log(length);
-                node = document.getElementsByTagName(s)[length];
+                node = arr.length == 0?document.getElementsByTagName(s):document.getElementsByTagName(s)[arr[0]];
         }
         return node;
 }
