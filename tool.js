@@ -32,7 +32,7 @@ var Tsdy = window.Tsdy = function () { }
             var xhr = new XMLHttpRequest;
 	    if (msg.start ? msg.start() : true) {
             xhr.timeout = msg.timeout ? msg.timeout : 6000;
-            xhr.open(msg.method, msg.url, msg.async===undefined ? msg.async : true);
+            xhr.open(msg.method, msg.url, msg.async!==undefined ? msg.async : true);
             msg.loading ? msg.loading() : 0;
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
