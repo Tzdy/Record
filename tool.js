@@ -28,8 +28,9 @@ function ajax_get(url,...arrArgs) {    //url,是否异步,成功后执行函数
 
 var Tsdy = window.Tsdy = function () { }
     Tsdy.prototype.ajax = function (msg) {
-        if (msg.start ? msg.start() : true) {
+        
             var xhr = new XMLHttpRequest;
+	    if (msg.start ? msg.start() : true) {
             xhr.timeout = msg.timeout ? msg.timeout : 6000;
             xhr.open(msg.method, msg.url, msg.async ? msg.async : true);
             msg.loading ? msg.loading() : 0;
