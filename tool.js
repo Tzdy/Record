@@ -31,7 +31,7 @@ var Tsdy = window.Tsdy = function () { }
         
             var xhr = new XMLHttpRequest;
 	    if (msg.start ? msg.start() : true) {
-            xhr.timeout = msg.timeout ? msg.timeout : 6000;
+            xhr.timeout = msg.timeout&&msg.async === true ? msg.timeout : null;
             xhr.open(msg.method, msg.url, msg.async!==undefined ? msg.async : true);
             msg.loading ? msg.loading() : 0;
             xhr.onreadystatechange = function () {
