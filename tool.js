@@ -49,6 +49,7 @@ var Tsdy = window.Tsdy = function () { }
                 msg.ontimeout(this);
             })
             xhr.send();
+            return this;
         }
     }
     window.ts = new Tsdy;
